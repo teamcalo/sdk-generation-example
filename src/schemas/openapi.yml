@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: User Service
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      x-amazon-apigateway-authtype: awsSigv4
+  schemas:
+    CreateUserResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        phoneNumber:
+          type: string
+        email:
+          type: string
+          format: email
+      required:
+        - name
+        - phoneNumber
+        - email
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        phoneNumber:
+          type: string
+        email:
+          type: string
+          format: email
+        address:
+          type: object
+          properties:
+            city:
+              type: string
+            street:
+              type: string
+            block:
+              type: string
+          required:
+            - city
+            - street
+            - block
+      required:
+        - name
+        - phoneNumber
+        - email
+        - address
+  parameters: {}
+paths:
+  /v1/user:
+    post:
+      operationId: createCreate
+      summary: Create a user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateUserRequest"
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateUserResponse"

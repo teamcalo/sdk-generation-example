@@ -1,0 +1,6 @@
+createUser:
+  handler: ./handler.default
+  events:
+    - http:
+        method: POST
+        path: /v1/users

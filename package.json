@@ -1,0 +1,28 @@
+{
+  "name": "openapi-sdk-generation-example",
+  "version": "1.0.0",
+  "description": "OpenAPI SDK Generation Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teamcalo/sdk-generation-example.git"
+  },
+  "author": "Qasim Albaqali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teamcalo/sdk-generation-example/issues"
+  },
+  "homepage": "https://github.com/teamcalo/sdk-generation-example#readme",
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.1.1",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^3.38.0",
+    "@types/node": "^22.5.2"
+  }
+}
